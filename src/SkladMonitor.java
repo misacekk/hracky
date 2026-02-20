@@ -50,7 +50,6 @@ public class SkladMonitor {
 
         while (pocetTrup < 1 || pocetRuce < 1 || pocetNohy < 1 || pocetHlava < 1) {
             if (vyrobenoCelkem >= cilovyPocet) return false;
-            System.out.println("Sestavitel " + idSestavitele + " čeká");
             try {
                 wait(1000);
             } catch (InterruptedException e) {
