@@ -11,7 +11,9 @@ public class VyrobceTrupu extends Thread {
             sklad.pridejSoucastku("trup", 50, 0);
             try {
                 Thread.sleep(1000);
-            } catch (InterruptedException e) { break; }
+            } catch (InterruptedException e) {
+                break;
+            }
         }
     }
 }

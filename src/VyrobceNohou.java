@@ -11,7 +11,9 @@ public class VyrobceNohou extends Thread {
             sklad.pridejSoucastku("nohy", 30, 0);
             try {
                 Thread.sleep(1000);
-            } catch (InterruptedException e) { break; }
+            } catch (InterruptedException e) {
+                break;
+            }
         }
     }
 }

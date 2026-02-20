@@ -15,6 +15,7 @@ public class SkladMonitor {
     private final int cilovyPocet;
 
     private int[] statistikaSestavitelu = new int[2];
+
     public SkladMonitor(int cil) {
         this.cilovyPocet = cil;
     }
@@ -25,7 +26,9 @@ public class SkladMonitor {
             try {
                 System.out.println("Nedostatek materiálu pro " + typ);
                 wait(1000);
-            } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
         }
 
         plast -= spotrebaPlastu;
@@ -50,10 +53,15 @@ public class SkladMonitor {
             System.out.println("Sestavitel " + idSestavitele + " čeká");
             try {
                 wait(1000);
-            } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
         }
 
-        pocetTrup--; pocetRuce--; pocetNohy--; pocetHlava--;
+        pocetTrup--;
+        pocetRuce--;
+        pocetNohy--;
+        pocetHlava--;
 
         if (new Random().nextInt(100) < 25) {
             vadneKusy++;

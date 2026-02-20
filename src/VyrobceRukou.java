@@ -11,7 +11,9 @@ public class VyrobceRukou extends Thread {
             sklad.pridejSoucastku("ruce", 20, 0);
             try {
                 Thread.sleep(1000);
-            } catch (InterruptedException e) { break; }
+            } catch (InterruptedException e) {
+                break;
+            }
         }
     }
 }

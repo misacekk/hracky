@@ -37,6 +37,5 @@ public class Main {
         sklad.tiskStatistik();
 
         System.out.println("Výroba dokončena");
-        System.exit(0);
     }
 }
