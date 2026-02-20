@@ -76,12 +76,6 @@ public class SkladMonitor {
         return true;
     }
 
-    /*public synchronized void doplnMateriál(int p, int v) {
-        this.plast += p;
-        this.vlasy += v;
-        notifyAll();
-    }*/
-
     public synchronized boolean jeHotovo() {
         return vyrobenoCelkem >= cilovyPocet;
     }
