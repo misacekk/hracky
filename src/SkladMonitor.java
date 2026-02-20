@@ -38,18 +38,17 @@ public class SkladMonitor {
             case "hlava" -> pocetHlava++;
         }
 
-        System.out.println("Dělník vyrobil " + typ + ". (Sklad: P:" + plast + "g, V:" + vlasy + "ks)");
+        System.out.println("Dělník vyrobil " + typ + ". (P:" + plast + "g, V:" + vlasy + "ks)");
         notifyAll();
     }
 
     public synchronized boolean zkusSestavit(int idSestavitele) {
-
         if (vyrobenoCelkem >= cilovyPocet) return false;
 
         while (pocetTrup < 1 || pocetRuce < 1 || pocetNohy < 1 || pocetHlava < 1) {
             if (vyrobenoCelkem >= cilovyPocet) return false;
+            System.out.println("Sestavitel " + idSestavitele + " čeká");
             try {
-                System.out.println("Sestavitel " + idSestavitele);
                 wait(1000);
             } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
         }
@@ -69,11 +68,11 @@ public class SkladMonitor {
         return true;
     }
 
-    public synchronized void doplnMateriál(int p, int v) {
+    /*public synchronized void doplnMateriál(int p, int v) {
         this.plast += p;
         this.vlasy += v;
         notifyAll();
-    }
+    }*/
 
     public synchronized boolean jeHotovo() {
         return vyrobenoCelkem >= cilovyPocet;

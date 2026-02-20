@@ -8,7 +8,7 @@ public class Skladnik extends Thread {
         this.sklad = s;
     }
 
-    @Override
+    /*@Override
     public void run() {
         while (!sklad.jeHotovo()) {
             try {
@@ -24,5 +24,5 @@ public class Skladnik extends Thread {
                 break;
             }
         }
-    }
+    }*/
 }
