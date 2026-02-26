@@ -79,6 +79,12 @@ public class SkladMonitor {
         return vyrobenoCelkem >= cilovyPocet;
     }
 
+    public synchronized void doplnMateriál(int p, int v) {
+        this.plast += p;
+        this.vlasy += v;
+        notifyAll();
+    }
+
     public void tiskStatistik() {
         System.out.println("------------------------------------------------");
         System.out.println("Vyrobeno hraček: " + vyrobenoCelkem);
