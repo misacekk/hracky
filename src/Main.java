@@ -28,14 +28,23 @@ public class Main {
         skladnik.start();
 
         try {
+            vTrup.join();
+            vRuce.join();
+            vNohy.join();
+            vHlava.join();
             s1.join();
             s2.join();
+            skladnik.join();
         } catch (InterruptedException e) {
             System.err.println("Hlavní vlákno bylo přerušeno.");
         }
 
-        sklad.tiskStatistik();
-
         System.out.println("Výroba dokončena");
+        System.out.println("Výrobce hlav vyrobil " +cil+" hlav.");
+        System.out.println("Výrobce těl vyrobil " +cil+" těl.");
+        System.out.println("Výrobce ruk vyrobil " +cil+" ruk.");
+        System.out.println("Výrobce noh vyrobil " +cil+" noh.");
+
+        sklad.tiskStatistik();
     }
 }

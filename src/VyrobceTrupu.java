@@ -10,7 +10,7 @@ public class VyrobceTrupu extends Thread {
         while (!sklad.jeHotovo()) {
             sklad.pridejSoucastku("trup", 50, 0);
             try {
-                Thread.sleep(1000);
+                Thread.sleep(750);
             } catch (InterruptedException e) {
                 break;
             }

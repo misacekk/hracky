@@ -1,16 +1,16 @@
-public class VyrobceHlav extends Thread {
+public class Balic extends Thread {
     private final SkladMonitor sklad;
 
-    public VyrobceHlav(SkladMonitor s) {
+    public Balic(SkladMonitor s) {
         this.sklad = s;
     }
 
     @Override
     public void run() {
         while (!sklad.jeHotovo()) {
-            sklad.pridejSoucastku("hlava", 10, 2);
+            sklad.zabalHracku(10);
             try {
-                Thread.sleep(2000);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 break;
             }

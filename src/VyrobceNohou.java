@@ -10,7 +10,7 @@ public class VyrobceNohou extends Thread {
         while (!sklad.jeHotovo()) {
             sklad.pridejSoucastku("nohy", 30, 0);
             try {
-                Thread.sleep(1000);
+                Thread.sleep(500);
             } catch (InterruptedException e) {
                 break;
             }
