@@ -50,15 +50,36 @@ public class SkladMonitor {
         System.out.println("Balič si dává pauzu");
     }
 
+    //Tak tady je D nevím proč a jak bych ho měl využít (samozřejmě bych to nehodil sem ale hodil bych to do te vyrobny soucastek a tam bych to vyuzil, je to v metode aby to bylo hezky oddelene kdyz to stejnak nevyuziju
 public synchronized void kontrolaManagera(){
         if(pocetTrup==2*pocetRuce&&pocetTrup==2*pocetHlava&&pocetTrup==2*pocetNohy){
             System.out.println("Výrobce trupu dej si vajgl pauzu jsi napřed");
+            try {
+                wait(10000);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
         } else if (pocetHlava==2*pocetRuce&&pocetHlava==2*pocetTrup&&pocetHlava==2*pocetNohy){
             System.out.println("Výrobce hlav dej si vajgl pauzu jsi napřed");
+            try {
+                wait(10000);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
         } else if (pocetNohy==2*pocetRuce&&pocetNohy==2*pocetTrup&&pocetNohy==2*pocetHlava){
             System.out.println("Výrobce nohou dej si vajgl pauzu jsi napřed");
+            try {
+                wait(10000);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
         } else if (pocetRuce==2*pocetNohy&&pocetRuce==2*pocetTrup&&pocetRuce==2*pocetHlava){
             System.out.println("Výrobce rukou dej si vajgl pauzu jsi napřed");
+            try {
+                wait(10000);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
     }
 }
 
@@ -159,6 +180,11 @@ public synchronized void kontrolaManagera(){
     }
 
     public void tiskStatistik() {
+        if(cilovyPocet==cilovyPocet){
+            System.out.println("JEEEEE každý makal tady máte kolču na osvěžení.");
+        }else{
+            System.out.println("Někdo se tu flákal vy flákači.");
+        }
         System.out.println("------------------------------------------------");
         System.out.println("Vyrobeno hraček: " + vyrobenoCelkem);
         System.out.println("Vyřazeno defektů: " + vadneKusy);
